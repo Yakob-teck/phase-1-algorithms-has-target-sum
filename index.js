@@ -1,6 +1,17 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  const complements = new Set(); 
+  for (let num of array) {
+    const complement = target - num; 
+    if (complements.has(complement)) {
+      return true; 
+    }
+    complements.add(num); 
+  }
+
+  return false; 
 }
+
+  
 
 /* 
   Write the Big O time complexity of your function here
@@ -8,6 +19,17 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+  function hasTargetSum(array, target):
+    complements = empty set
+    
+    for num in array:
+        complement = target - num
+        if complement is in complements:
+            return true
+        add num to complements
+    
+    return false
+
 */
 
 /*
